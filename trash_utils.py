@@ -38,7 +38,7 @@ def load_xy(r):
 
 def parseMull(street, house_number):
     current_year = datetime.datetime.now().year
-    urls = [os.environ.get(variable).format(year=year) 
+    urls = [os.environ.get(variable).format(year=year)
             for year in [current_year, current_year - 1, current_year - 2]
             for variable in ['TRASH_URL', 'TRASH_URL_ALT']]
     verify = os.environ.get('VERIFY_CERT', 'True').lower() in ('true', 't', 'y', 'yes', 'on', '1')
@@ -102,6 +102,10 @@ def parseMull(street, house_number):
             msg += 'Failed to parse %s: %s' % (url, e)
             # msg += 'Html:\n%s\n\n' % (url, r.text)
             msg += traceback.format_exc() + '\n'
+    if len(msg) > 3500:
+        # to prevent errors when sending
+        msg = msg[:3500] + "...\n\n"
     if url_alt:
-        msg += "Please use the website instead: %s" % url_alt
+        alt_msg = "<b>Please use the website instead</b>: %s" % url_alt
+        msg = f'{alt_msg}\n\n{msg}{alt_msg}'
     return (msg, False)
