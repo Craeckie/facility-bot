@@ -5,7 +5,7 @@ services:
     environment:
       BOT_TOKEN: "123123:ABCD34asfasdasd"
       ADMIN_IDS: "1231231:2342344"
-      PLACES: "Eckstraße:23:1232232,2342342;Kaiserstraße:52:2342123,4212321"     
+      PLACES: "Eckstraße:23:1231231,2342342;Kaiserstraße:52:2342344,4212321"     
       TRASH_URL: "https://.."
       PAPIER_URL: "https://../...ics"
       REDIS_HOST: "redis"

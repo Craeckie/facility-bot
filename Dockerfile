@@ -10,7 +10,7 @@ RUN apt update && apt upgrade -y --no-install-recommends locales libzbar0 && \
 
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-COPY ./requirements.txt /bot/
+COPY bot/requirements.txt /bot/
 WORKDIR /bot
 
 RUN apt update && apt install -y build-essential g++ gcc && \
@@ -20,7 +20,7 @@ RUN apt update && apt install -y build-essential g++ gcc && \
     apt remove -y build-essential g++ && apt autoremove -y && \
     rm -rf /var/lib/apt/* /var/cache/apt/*
 
-COPY ./ /bot
+COPY bot/ /bot
 
 STOPSIGNAL SIGINT
 CMD ["python", "/bot/trash.py"]
