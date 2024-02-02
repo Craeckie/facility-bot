@@ -7,7 +7,7 @@ import os
 from datetime import datetime, timedelta
 from flask import Flask, request
 
-from trash_utils import load_list, store_list, load_xy
+from utils import load_list, store_list, load_xy
 
 app = Flask(__name__)
 r = redis.Redis(host=os.environ.get('REDIS_HOST', default='127.0.0.1'), port=6379, db=0)

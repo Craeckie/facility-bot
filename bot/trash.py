@@ -12,7 +12,8 @@ from telegram import ReplyKeyboardMarkup
 from telegram.constants import ChatAction, ParseMode
 import os
 import redis
-from trash_utils import *
+import pickle
+from utils import *
 import traceback
 from icalendar import Calendar
 from datetime import *
@@ -20,7 +21,7 @@ from datetime import datetime
 from temp_utils import plot
 import logging
 
-logging.basicConfig(level=logging.DEBUG,
+logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 # logger = logging.getLogger()
 # logger.setLevel(logging.INFO)
