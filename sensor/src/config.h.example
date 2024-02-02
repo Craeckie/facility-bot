@@ -1,0 +1,16 @@
+#define WIFI_SSID       "<WiFi Name>"
+#define WIFI_PASSWORD   "<WiFi Password>"
+#define SERVER_HOST     "<Server Domain>"
+#define SERVER_URL      "/temp/"
+#define AUTH_TOKEN "<Basic Authentication Token>"
+#define SERVER_PORT_HTTPS     443
+#define ONEWIRE_GPIO 2
+#define SENSOR_SAMPLES 10
+#define DECIMALS 4
+
+static const char root_ca_cert[] PROGMEM = R"EOF(
+-----BEGIN CERTIFICATE-----
+<Server SSL Root Certificate>
+-----END CERTIFICATE-----
+)EOF";
+BearSSL::X509List cert(root_ca_cert);

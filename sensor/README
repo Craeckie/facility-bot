@@ -1,0 +1,2 @@
+Code for an ESP32 (esp01_1m) with a temperature sensor.
+It periodically sends the current temperature to a web server (see other directory) using simple GET requests
